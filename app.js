@@ -8,6 +8,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
+app.get('/', (req, res, next) => {
+    res.send('კალკულატორის ეიპიაი')
+}) 
+
 app.post('/calculate', (req, res) => {
   const { firstNumber, operator, secondNumber } = req.body;
 
